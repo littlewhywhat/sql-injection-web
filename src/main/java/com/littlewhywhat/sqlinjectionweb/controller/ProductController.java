@@ -1,5 +1,8 @@
 package sqlinjectionweb.controller;
 
+import sqlinjectionweb.repository.Product;
+
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -10,12 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProductController {
 
-    private List<String> list = new ArrayList<String>();
+    private final List<Product> list = new ArrayList<Product>();
+    private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/")
-    public List<String> product(@RequestParam(value="product", defaultValue="") String product) {
-        if (product.length() != 0)
-            list.add(product);
+    public List<Product> product(@RequestParam(value="name", defaultValue="") String name) {
+        if (name.length() != 0) {
+            long id = counter.incrementAndGet();
+            list.add(new Product(id, name));
+        }
         return list;
     }
 }
