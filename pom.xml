@@ -29,7 +29,7 @@
         </dependency>
     </dependencies>
     <properties>
-        <start-class>sqlinjectionweb.Application</start-class>
+        <start-class>com.littlewhywhat.sqlinjectionweb.Application</start-class>
     </properties>
 
     <build>

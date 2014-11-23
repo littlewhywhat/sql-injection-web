@@ -1,7 +1,7 @@
-package sqlinjectionweb.controller;
+package com.littlewhywhat.sqlinjectionweb.controller;
 
-import sqlinjectionweb.repository.Product;
-import sqlinjectionweb.repository.ProductRepository;
+import com.littlewhywhat.sqlinjectionweb.repository.Product;
+import com.littlewhywhat.sqlinjectionweb.repository.ProductRepository;
 
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.List;

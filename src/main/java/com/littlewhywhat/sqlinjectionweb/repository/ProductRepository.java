@@ -1,4 +1,4 @@
-package sqlinjectionweb.repository;
+package com.littlewhywhat.sqlinjectionweb.repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

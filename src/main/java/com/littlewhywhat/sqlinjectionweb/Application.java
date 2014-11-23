@@ -1,4 +1,4 @@
-package sqlinjectionweb;
+package com.littlewhywhat.sqlinjectionweb;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.SpringApplication;
