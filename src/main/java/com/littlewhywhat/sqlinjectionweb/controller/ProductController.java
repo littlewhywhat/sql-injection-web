@@ -5,7 +5,6 @@ import sqlinjectionweb.repository.ProductRepository;
 
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.List;
-import java.util.ArrayList;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ProductController {
 
     private final AtomicLong counter = new AtomicLong();
-    private final List<Product> list = new ArrayList<Product>();
 
     @Autowired
     private ProductRepository products;
@@ -33,6 +31,6 @@ public class ProductController {
     public @ResponseBody boolean addProduct(
         @RequestParam("name") String name) {
         long id = counter.incrementAndGet();
-        return list.add(new Product(id, name));
+        return products.add(id, name);
     } 
 }

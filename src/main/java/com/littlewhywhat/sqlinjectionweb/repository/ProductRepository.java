@@ -40,4 +40,10 @@ public class ProductRepository {
                     }
                 });
     }
+
+    public boolean add(long id, String name) {
+        jdbcTemplate.execute("INSERT INTO products(id,name) " +
+                    "values(" + id + ", '" + name + "')");
+        return true;
+    }
 }
