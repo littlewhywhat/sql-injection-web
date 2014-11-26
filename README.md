@@ -4,13 +4,21 @@ An example of the web app that has a vulnerability to sql injection attack.
 ![alt tag](http://imgs.xkcd.com/comics/exploits_of_a_mom.png)
 
 #### WEB API
-- '/' - return all products;
-- '/add?name=apple' - add new product with name 'apple'.
+return all products:
+```
+/
+```
+add new product with name 'apple':
+```
+/add?name=apple
+```
 
 #### Possible sql injection attack
-'/add?name=apple') delete from products where id > -1 insert into products (id,name) values (0, 'sqlinjection attack'
+```
+/add?name=apple') drop table products --
+```
 
-It will delete all products and insert the one with id = 0 and name = 'sqlinjectionattack'.
+It will delete the table of products.
 
 #### Mistake
 In ProductRepository class the web developer, to compose a query for inserting new product, is using string concatenation of HTTP request parameter value. This solution gives a wide range of actions to attacker, because by changing the value of parameter he could insert any sql command he wants, and the resulting query will be naively executed by application.
