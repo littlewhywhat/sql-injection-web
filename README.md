@@ -1,5 +1,8 @@
 # sql-injection-web
 An example of the web app that has a vulnerability to sql injection attack.
+
+![alt tag](http://imgs.xkcd.com/comics/exploits_of_a_mom.png)
+
 #### WEB API
 - '/' - return all products;
 - '/add?name=apple' - add new product with name 'apple'.
