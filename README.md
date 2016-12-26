@@ -29,7 +29,12 @@ In ProductRepository class the web developer, to compose a query for inserting n
 - Product - java class to represent a product with fields 'id' and 'name'.
 
 #### Build
-Maven
+Maven 3.0.5
+
+run from root folder:
+```
+ mvn package && java -jar target/sqlinjectionweb-0.1.0.jar
+```
 
 #### Dependencies
 - spring-boot-starter-web; 
